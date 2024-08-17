@@ -1,0 +1,12 @@
+node_modules
+
+.astro
+
+*.d.ts
+
+/.cache
+/build
+/dist
+/public
+.env
+.dev.vars
