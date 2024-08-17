@@ -10,7 +10,8 @@
     "astro": "astro",
     "prettier": "prettier \"**/*.+(js|jsx|astro|css|ts|tsx|cjs|mjs)\"",
     "format": "pnpm prettier --list-different",
-    "format:write": "pnpm prettier --write"
+    "format:write": "pnpm prettier --write",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@astrojs/check": "^0.9.2",
@@ -18,6 +19,9 @@
     "typescript": "^5.5.4"
   },
   "devDependencies": {
+    "@typescript-eslint/parser": "^8.1.0",
+    "eslint": "^9.9.0",
+    "eslint-plugin-astro": "^1.2.3",
     "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.6"
