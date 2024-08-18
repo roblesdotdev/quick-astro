@@ -1,0 +1,45 @@
+---
+import { ViewTransitions } from 'astro:transitions'
+
+type Props = {
+  title: string
+  description?: string
+  keywords?: string
+  image?: string
+}
+
+const { title, description, image, keywords = '' } = Astro.props
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+const siteTitle = title ? title : 'Quick Astro'
+const siteDescription = description
+  ? description
+  : 'A minimalist astro theme ready to use with Tailwind, Prettier, ESLint, and optimized for SEO.'
+const siteKeywords = keywords ? keywords : 'astro,tailwind,theme'
+const ogImage = new URL(image ? image : '/og.png', Astro.url).href
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<title>{siteTitle}</title>
+<meta name="description" content={siteDescription} />
+<meta name="keywords" content={siteKeywords} />
+
+<!-- Open Graph -->
+<meta name="og:url" content={Astro.url.href} />
+<meta name="og:title" content={siteTitle} />
+<meta name="og:description" content={siteDescription} />
+<meta property="og:image" content={ogImage} />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:creator" content="@roblesdotdev" />
+<meta name="twitter:title" content={siteTitle} />
+<meta name="twitter:description" content={siteDescription} />
+<meta property="twitter:image" content={ogImage} />
+
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalURL} />
+
+<ViewTransitions />

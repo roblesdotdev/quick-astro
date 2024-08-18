@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://quick-astro.pages.dev/sitemap-index.xml
