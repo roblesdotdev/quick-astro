@@ -1,6 +1,17 @@
 import eslintPluginAstro from 'eslint-plugin-astro'
 
 export default [
+  {
+    ignores: [
+      '**/.cache/**',
+      '**/node_modules/**',
+      '**/build/**',
+      '**/public/build/**',
+      '**/playwright-report/**',
+      '**/server-build/**',
+      '**/dist/**',
+    ],
+  },
   ...eslintPluginAstro.configs.recommended,
   {
     rules: {
