@@ -8,6 +8,6 @@
   }
 
   body {
-    @apply min-h-screen min-w-80 overflow-x-hidden bg-neutral-900 text-neutral-100 antialiased;
+    @apply min-h-screen min-w-80 overflow-x-hidden bg-[#111117] text-neutral-100 antialiased;
   }
 }
