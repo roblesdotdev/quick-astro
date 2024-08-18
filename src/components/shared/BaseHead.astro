@@ -1,8 +1,10 @@
 ---
+import { AstroFont } from 'astro-font'
 import { ViewTransitions } from 'astro:transitions'
+import config from '~/data/site-config.json'
 
 type Props = {
-  title: string
+  title?: string
   description?: string
   keywords?: string
   image?: string
@@ -11,12 +13,10 @@ type Props = {
 const { title, description, image, keywords = '' } = Astro.props
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
-const siteTitle = title ? title : 'Quick Astro'
-const siteDescription = description
-  ? description
-  : 'A minimalist astro theme ready to use with Tailwind, Prettier, ESLint, and optimized for SEO.'
-const siteKeywords = keywords ? keywords : 'astro,tailwind,theme'
-const ogImage = new URL(image ? image : '/og.png', Astro.url).href
+const siteTitle = title ? title : config.title
+const siteDescription = description ? description : config.description
+const siteKeywords = keywords ? keywords : config.meta.keywords
+const ogImage = new URL(image ? image : config.image, Astro.url).href
 ---
 
 <meta charset="utf-8" />
@@ -26,6 +26,34 @@ const ogImage = new URL(image ? image : '/og.png', Astro.url).href
 <meta name="description" content={siteDescription} />
 <meta name="keywords" content={siteKeywords} />
 
+<!-- font -->
+<AstroFont
+  config={[
+    {
+      src: [],
+      name: 'Open Sans',
+      // Google Fonts URL
+      googleFontsURL:
+        'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap',
+      preload: true,
+      display: 'swap',
+      selector: 'body',
+      fallback: 'sans-serif',
+      cssVariable: 'sans-font',
+    },
+    {
+      src: [],
+      name: 'Germania One',
+      googleFontsURL:
+        'https://fonts.googleapis.com/css2?family=Germania+One&display=swap',
+      preload: true,
+      display: 'swap',
+      fallback: 'serif',
+      cssVariable: 'display-font',
+    },
+  ]}
+/>
+
 <!-- Open Graph -->
 <meta name="og:url" content={Astro.url.href} />
 <meta name="og:title" content={siteTitle} />
@@ -34,7 +62,7 @@ const ogImage = new URL(image ? image : '/og.png', Astro.url).href
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:creator" content="@roblesdotdev" />
+<meta name="twitter:creator" content={config.author.twitter} />
 <meta name="twitter:title" content={siteTitle} />
 <meta name="twitter:description" content={siteDescription} />
 <meta property="twitter:image" content={ogImage} />

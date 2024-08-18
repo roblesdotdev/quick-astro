@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply min-h-screen min-w-80 overflow-x-hidden bg-neutral-900 text-neutral-100 antialiased;
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "title": "Quick Astro",
+  "description": "A minimalist astro theme ready to use with Tailwind, Prettier, ESLint and optimized for SEO.",
+  "image": "/og.png",
+  "meta": {
+    "keywords": "astro, tailwind, typescript, prettier, eslint, vitest, playwright"
+  },
+  "author": {
+    "twitter": "@roblesdotdev"
+  }
+}

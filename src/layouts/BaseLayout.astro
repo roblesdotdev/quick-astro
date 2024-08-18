@@ -3,7 +3,7 @@ import BaseHead from '~/components/shared/BaseHead.astro'
 import '~/styles/global.css'
 
 interface Props {
-  title: string
+  title?: string
   description?: string
   keywords?: string
   image?: string
@@ -22,8 +22,8 @@ const { title, description, keywords, image } = Astro.props
       image={image}
     />
   </head>
-  <body class="min-h-screen overflow-x-hidden antialiased">
-    <main class="container p-8">
+  <body>
+    <main class="mx-auto max-w-2xl px-4 py-8">
       <slot />
     </main>
   </body>
