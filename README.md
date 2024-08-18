@@ -1,54 +1,52 @@
-# Astro Starter Kit: Basics
+<div align="center">
+  <img alt="banner" src="./public/og.png" />
+</div>
+
+## 🚀 Quick Astro
+
+This template comes preconfigured with commonly used tools in web development.
+With minimal styling, SEO support, sitemap integration, and ViewTransition, it
+also includes automated workflows for linting, formatting, and Git hooks, along
+with testing setups using Vitest and end-to-end testing with Playwright, making
+it a solid and efficient starting point.
+
+### ⚒️ Usage
+
+You can bootstrap a new Astro project using this template with the following
+command:
 
 ```sh
-npm create astro@latest -- --template basics
+pnpm dlx create-astro --template roblesdotdev/quick-astro
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+### 💪 Features
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- ✅ Minimal styling with tailwind
+- ✅ SEO-friendly with canonical URLs and OpenGraph data
+- ✅ Sitemap support
+- ✅ ViewTransition
+- ✅ Linting
+- ✅ Formatting
+- ✅ Git hooks
+- ✅ Vitest
+- ✅ Playwright
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
+### 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+| Command             | Action                                                                         |
+| :------------------ | :----------------------------------------------------------------------------- |
+| `pnpm install`      | Installs dependencies                                                          |
+| `pnpm dev`          | Starts local dev server at `localhost:4321`                                    |
+| `pnpm build`        | Build your production site to `./dist/`                                        |
+| `pnpm preview`      | Preview your build locally, before deploying                                   |
+| `pnpm check`        | Run CLI commands `astro check` and `tsc`                                       |
+| `pnpm format`       | Check format without applies changes                                           |
+| `pnpm format:write` | Format files and applies fixes                                                 |
+| `pnpm lint`         | Run eslint                                                                     |
+| `pnpm test`         | Vitest on dev mode(watch)                                                      |
+| `pnpm test:run`     | Vitest on CI mode                                                              |
+| `pnpm test:e2e`     | Run playwright dev mode                                                        |
+| `pnpm test:ci`      | Run playwright on CI mode                                                      |
+| `pnpm validate`     | Executes on parallel CLI commands like format, check... Executed before commit |
