@@ -10,6 +10,7 @@ export default [
       '**/playwright-report/**',
       '**/server-build/**',
       '**/dist/**',
+      '**/coverage/**',
     ],
   },
   ...eslintPluginAstro.configs.recommended,
